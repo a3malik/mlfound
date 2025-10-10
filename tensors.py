@@ -29,4 +29,15 @@ print("shape of x is ",x.shape)
 x=np.array([[12,2,9],[3,14,7]],dtype=np.float16)
 print("Now new shape of x is ",x.shape)
 print("type of x is ",type(x))
-print("datatype of x is ",type(x[1,:][2]))
+print("datatype of x is ",type(x.T[:,1][2]))
+
+#Transpose of a regular 1D array
+x=np.array([4,5,6]) #does this vector represent a point in 3D space?
+print("shape of [1,2,3] and [1,2,3].T")
+print(x.shape)
+print(x.T.shape)
+
+#Transpose of a 2D array
+x=np.array([[4,5],[5,6],[6,7]])
+print(x,x.shape)
+print(x.T,x.T.shape)
