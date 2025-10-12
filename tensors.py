@@ -10,8 +10,8 @@ def torch_scalars():
     x_pt=torch.tensor(25)
     print(x_pt.shape)
 
-import tensorflow as tf
 def tensorflow_scalar():
+    import tensorflow as tf
     x_tf=tf.Variable(35)
     print(type(x_tf))
     print(x_tf.shape)
@@ -35,15 +35,17 @@ def vector_prints():
     print("datatype of x is ",type(x.T[:,1][2]))
 
 #Transpose of a regular 1D array
-x=np.array([4,5,6]) #does this vector represent a point in 3D space?
-print("shape of [1,2,3] and [1,2,3].T")
-print(x.shape)
-print(x.T.shape)
+def _1D_array():
+    x=np.array([4,5,6]) #does this vector represent a point in 3D space?
+    print("shape of [1,2,3] and [1,2,3].T")
+    print(x.shape)
+    print(x.T.shape)
 
 #Transpose of a 2D array
-x=np.array([[4,5],[5,6],[6,7]])
-print(x,x.shape)
-print(x.T,x.T.shape)
+def _2D_array():
+    x=np.array([[4,5],[5,6],[6,7]])
+    print(x,x.shape)
+    print(x.T,x.T.shape)
 
 #How are 1D arrays different from vactors? Is 2D array a vector?
 
@@ -52,6 +54,30 @@ def _1D_and_2D_vectors():
     for a 2D array to be a vector it should have only one column or one row'''
     _1d_vector=np.array([22,8,4])
     _2d_vector=np.array([[22,8,4]])
+    print("details of 1D vectors")
     print(_1d_vector,_1d_vector.shape, _1d_vector.T.shape)
+    print("details of 2D vectors")
     print(_2d_vector,_2d_vector.shape, _2d_vector.T.shape)
-_1D_and_2D_vectors()
+#_1D_and_2D_vectors()
+
+def zero_vectors():
+    x=np.zeros(3)
+    print(x,x.shape)
+    x=np.zeros((3,4))
+    print(x,x.shape)
+#zero_vectors()
+
+def torch_vectors():
+    x=torch.tensor([11,4,2])
+    print(x,x.shape)
+    #print(x.T,x.T.shape) <-- Throws a warning
+    print(type(x))
+#torch_vectors()
+
+def tf_vectors():
+    from tensorflow import Variable
+    x=Variable([11,4,2])
+    print(x,x.shape)
+    #print(x.T,x.T.shape) <--Throws an error
+    print(type(x))
+#tf_vectors()
